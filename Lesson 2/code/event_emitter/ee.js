@@ -51,7 +51,6 @@
 //
 //	ee.emit('test'); //nothing will execute
         
-        global.UAM.eee = ee;
 	global.UAM.EventEmitter = EE;
 
 }(window));
