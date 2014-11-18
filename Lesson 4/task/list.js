@@ -10,7 +10,7 @@ window.onload = function() {
                         listItem.innerHTML = text  + ' <span class="delete">Delete</span>';
                         list.appendChild(listItem);
                         tab.push(listItem);
-                        input.value = ""
+                        input.value = "";
                 }
                 else{
                         input.style.borderColor = "red";
@@ -18,7 +18,7 @@ window.onload = function() {
         });
 
         list.addEventListener('click', function (elem) {
-                 var target = elem.target;
+                 var target = elem.target;document.getElementById("listview")
                  if (target.className == "delete"){
                         target.parentElement.remove();
                         tab.splice(tab.indexOf(target.parentElement),1);

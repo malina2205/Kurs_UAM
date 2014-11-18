@@ -1,0 +1,14 @@
+ul#listview{
+}
+
+li {
+cursor: pointer;
+}
+
+.active {
+color: green;
+}
+
+.unactive{
+color: red;
+}

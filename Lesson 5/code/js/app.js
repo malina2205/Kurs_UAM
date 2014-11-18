@@ -3,11 +3,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	var store = new UAM.Store();
 
-	var inputView = new UAM.InputView(document.querySelector('#inputview'));
-	var listView = new UAM.InputView(document.querySelector('#listview'));
-	var footerView = new UAM.InputView(document.querySelector('#footerview'));
-
-	new InputCtrl(inputView, store);
-	new ListCtrl(listView, store);
-	new FooterCtrl(footerView, store);
+	var inputView = new UAM.InputView();
+	var listView = new UAM.ListView();
+	var footerView = new UAM.FooterView();	
+	
+	new UAM.InputCtrl(inputView, store);
+	new UAM.ListCtrl(listView, store);
+	new UAM.FooterCtrl(footerView, store);
+	
+	
 });
