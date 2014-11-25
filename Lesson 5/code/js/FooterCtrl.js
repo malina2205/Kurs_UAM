@@ -1,9 +1,9 @@
-UAM.FooterCtrl = function(view, store){
+FooterCtrl = function(view, store){
 	store.on("itemAdded", function(text){
 			var itemNumber = store.data.length;
-			view.update(itemNumber);
+			view.updateItems(itemNumber);
 		});
 	store.on("itemUpdated", function(number){
-		//view.updateActive(number);
+		view.updateActive(number);
 	});
 }

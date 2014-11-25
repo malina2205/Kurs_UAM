@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>My first SPA question</title>
+		<title>TODO list</title>
 		<script type="text/javascript" src="js/ee.js"></script>
 		<script type="text/javascript" src="js/utils.js"></script>
 		<script type="text/javascript" src="js/store.js"></script>
@@ -17,13 +17,15 @@
 
 	<body>
 	 	<div id="inputview">
-	 		<textarea id="inputText" placeholder="Add element to list"></textarea>
+	 		<input type="text" id="inputText" placeholder="Add element to list"/>
 			<button id="addButton">Add</Button>
 		</div>
 		<ul id="listView">
 		
 		</ul>
 		<div id="footerView">
+		Total number of items: <span id="totalItems">0</span><br>
+		Active items: <span id="activeItems">0</span>
 		</div>
 		<div id="active"></div>
 	</body>

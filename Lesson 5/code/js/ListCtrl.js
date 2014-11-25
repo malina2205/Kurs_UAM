@@ -1,7 +1,7 @@
-UAM.ListCtrl = function(view, store){
+ListCtrl = function(view, store){
 
-	view.on("itemClicked", function(elem){
-		store.update()
+	view.on("itemUpdated", function(action){
+		store.update(action);
 	});	
 	
 	store.on("itemAdded", function(item){

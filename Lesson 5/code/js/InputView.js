@@ -14,4 +14,11 @@ UAM.InputView = function (inputView) {
 
 UAM.utils.inherits(UAM.EventEmitter, UAM.InputView);
 
-
+UAM.InputView.prototype.validInput = function(valid){
+		if(valid){
+			this.inputText.className = "valid";		
+		}
+		else{
+			this.inputText.className = "invalid";
+		}
+}

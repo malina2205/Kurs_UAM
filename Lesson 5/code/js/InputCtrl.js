@@ -1,9 +1,13 @@
-UAM.InputCtrl = function(view, store){
+InputCtrl = function(view, store){
 	view.on("addTODO", function(inText){
-		if(inText!="")
+		if(inText!=""){
 			store.add(inText);
-		else
+			view.validInput(true);
+		}
+		else{
 			console.log("empty input");
+			view.validInput(false);
+		}
 	});
 
 }

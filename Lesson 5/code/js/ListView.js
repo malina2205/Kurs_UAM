@@ -1,17 +1,17 @@
-UAM.ListView = function () {
+UAM.ListView = function (view) {
 	UAM.EventEmitter.call(this);
 	this.listView = document.querySelector("#listView");
 	
 	this.itemClicked = function(elem){
-		this.emit("itemClicked", elem);
-		
 		//do zmiany
 		var target = elem.target;
       if(target.className == "active"){
       	target.className = "unactive";
+      	this.emit("itemUpdated", "deactivate");
       }
       else {
-			target.className = "active";      
+			target.className = "active";  
+			this.emit("itemUpdated", "activate");    
       }
 	};	
 

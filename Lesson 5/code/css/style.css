@@ -1,14 +1,81 @@
+body{
+	width: 400px;
+}
+
 ul#listview{
+	padding: 0;
 }
 
 li {
-cursor: pointer;
+	cursor: pointer;
+	list-style: none;	
+   position: relative;
+   line-height: 27px;
+   padding: 4px 38px 4px 14px;
+   color: #424239;
+   text-shadow: 0px 1px rgba(255, 255, 255, 0.3);
+   border-radius: 2px;
+	color: #324431;
+	margin-bottom: 15px;
+	background: none repeat scroll 0% 0% #FFEEEE;
+
 }
 
 .active {
-color: green;
+	color: green;
+	background: none repeat scroll 0% 0% #BFF1BC;
+	border-color: green;
 }
 
 .unactive{
-color: red;
+	color: #3C3C3C	;
+	background: none repeat scroll 0% 0% rgba(240, 176, 176, 1)	;
+}
+
+#addButton {
+	width: 90px;
+   vertical-align: top;
+   line-height: 1;
+   padding: 0px 16px;
+   font-size: 14px;
+   color: #FFF;
+   text-align: center;
+   border: 0px none;
+   border-radius: 2px;
+   cursor: pointer;
+   background: none repeat scroll 0% 0% #00ACEE;
+}
+
+
+input, button {
+	height: 33px;
+   margin: 0px;
+   line-height: normal;
+   font-family: inherit;
+   font-size: 100%;
+}
+
+input[type="text"]{
+	background: none repeat scroll 0% 0% #FFF;
+	width: 300px;
+	border-color: #000;
+	border-radius: 3px;
+}
+
+input[type="text"]:focus{
+   color: #3C3C3C;
+   border-color: #3FB6F2;
+   outline: medium none;
+}
+
+input.invalid {
+	border-color:  #FF1111;
+	color: #E84C4A;
+ }
+
+
+#footerView{
+	margin-top: 2.5em;
+	color: #778187;
+	text-align: center;
 }
