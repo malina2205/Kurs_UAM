@@ -22,8 +22,13 @@
 	};
 
 	EE.prototype.emit = function (eventName /*, other args...*/) {
+	        var i;
 		var listenersTab = this.listeners[eventName];
-		var args = Array.slice(arguments,1);
+		//var args = Array.slice(arguments,1);
+		var args = [];
+		for (var i = 1; i < arguments.length; i++) {
+                        args.push(arguments[i]);
+                }
 		for(i in listenersTab){
 		        listenersTab[i].apply(this, args);
 		}

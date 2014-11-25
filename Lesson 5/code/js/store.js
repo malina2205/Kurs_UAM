@@ -17,7 +17,7 @@ UAM.Item = function(id, inText){
 UAM.Store.prototype.add = function (data) {
 	this.data.push(data);
 	console.log("----" + data);
-	var item = new UAM.Item(i, data);
+	var item = new UAM.Item(this.items, data);
 	this.items++;
 	this.activeItems++;
 	console.log("----" + item);
