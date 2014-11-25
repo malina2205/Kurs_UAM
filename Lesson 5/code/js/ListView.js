@@ -5,18 +5,21 @@ UAM.ListView = function (view) {
 	this.itemClicked = function(elem){
 		//do zmiany
 		var target = elem.target;
-      if(target.className == "active"){
-      	target.className = "unactive";
-      	this.emit("itemUpdated", "deactivate");
-      }
-      else {
-			target.className = "active";  
-			this.emit("itemUpdated", "activate");    
-      }
+		if(target.nodeName == "LI"){
+      	if(target.className == "active"){
+      		target.className = "unactive";
+      		this.emit("itemUpdated", "deactivate");
+      	}
+      	else {
+				target.className = "active";  
+				this.emit("itemUpdated", "activate");    
+      	}
+		}
 	};	
 
 	this.listView.addEventListener("click", this.itemClicked.bind(this));
 };
+
 UAM.utils.inherits(UAM.EventEmitter, UAM.ListView);
 
 UAM.ListView.prototype.addItem = function(item) {
