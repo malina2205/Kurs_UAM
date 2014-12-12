@@ -1,22 +1,38 @@
 <html>
+	<head>
+		<title>TODO list</title>
 
-<head></head>
+		<script type="text/javascript" src="js/ee.js"></script>
+		<script type="text/javascript" src="js/spin.js"></script>
+		<script type="text/javascript" src="js/loading.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/store.js"></script>
+		<script type="text/javascript" src="js/http.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/InputView.js"></script>
+		<script type="text/javascript" src="js/ListView.js"></script>
+		<script type="text/javascript" src="js/FooterView.js"></script>
+		
+		<script type="text/javascript" src="js/InputCtrl.js"></script>
+		<script type="text/javascript" src="js/ListCtrl.js"></script>
+	   <script type="text/javascript" src="js/FooterCtrl.js"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+	</head>
 
-<body>
-	Test zapytania POST.
-
-	<script type="text/javascript">
-		var httpRequest = new XMLHttpRequest();
-		httpRequest.onload = function () {
-			if (httpRequest.status !== 200) {
-				throw new Error('Request failed');
-			}
-			console.log(httpRequest);
-		};
-	httpRequest.open('POST', '/api/todos');
-	httpRequest.responseType="json";
-	httpRequest.setRequestHeader('Content-Type', 'application/json');
-	httpRequest.send(JSON.stringify([{id: 0, value: 'test'}, {id: 1, value: 'test222'}]));
-	</script>
-</body>
+	<body>
+	
+	 	<div id="inputview">
+	 		<input type="text" id="inputText" placeholder="Add element to list"/>
+			<button id="addButton" class="blue">Add</Button>
+			<button id="saveButton" class="green">Save</Button>
+		</div>
+		<div class="content">
+			<div id="loading"></div>
+			<ul id="listView"></ul>
+			<div id="footerView">
+				Total number of items: <span id="totalItems">0</span><br>
+				Active items: <span id="activeItems">0</span>
+			</div>
+		</div>
+	</body>
 </html>

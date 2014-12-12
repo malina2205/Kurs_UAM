@@ -8,6 +8,20 @@ window.addEventListener('DOMContentLoaded', function () {
 	var footerView = new UAM.FooterView(document.querySelector('#footerview'));
 
 	new InputCtrl(inputView, store);
-	new ListCtrl(listView, store, UAM.Http);
-	new FooterCtrl(footerView, store);
+	new ListCtrl(listView, store);
+	new FooterCtrl(footerView, store);	
+		
+	this.load = function (err, res){
+		if(err){
+			inputView.emit('loadingError', err);
+			listView.emit('loadingError', err);		
+		}
+		else{
+			res.forEach(function(element) {
+				store.add(element);
+			});
+		}	
+	}
+
+	UAM.Http.request('/api/todos','GET', '', this.load.bind(this));
 });
